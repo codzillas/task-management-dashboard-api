@@ -1,11 +1,11 @@
-import express from "express";
-import pool from "../client/client.js";
-import { ErrorMessage } from "../shared/errorMessages.js";
+import pool from "../../client/client.js";
 
 const createSection = async (req, res) => {
-  const { name, projectId } = req.body; // Destructure name and projectId from the request body
-
-  if (!name) {
+  const { projectId } = req.params; // Destructure name and projectId from the request body
+  const { sectionName } = req.body; // Destructure name and projectId from the request body
+  console.log("projectId", projectId);
+  console.log("sectionName", sectionName);
+  if (!sectionName) {
     return res.status(400).json({ error: "Section name is required." });
   }
 
@@ -17,7 +17,7 @@ const createSection = async (req, res) => {
     // Step 1: Insert the new section into the sections table
     const result = await pool.query(
       "INSERT INTO sections (name) VALUES ($1) RETURNING section_id, name",
-      [name]
+      [sectionName]
     );
 
     const newSection = result.rows[0]; // Get the newly created section

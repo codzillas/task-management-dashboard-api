@@ -1,5 +1,5 @@
 import { jwtDecode } from "jwt-decode";
-import pool from "../client/client.js";
+import pool from "../../client/client.js";
 
 const getProjects = async (req, res) => {
   try {

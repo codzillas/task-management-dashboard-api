@@ -1,6 +1,6 @@
 import express from "express";
-import pool from "../client/client.js";
-import { ErrorMessage } from "../shared/errorMessages.js";
+import pool from "../../client/client.js";
+import { ErrorMessage } from "../../shared/errorMessages.js";
 
 const createProject = async (req, res) => {
   const {

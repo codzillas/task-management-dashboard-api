@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import pool from "../client/client.js";
+import pool from "../../client/client.js";
 import jwt from "jsonwebtoken";
 
 const loginRouter = async (req, res) => {
@@ -32,7 +32,9 @@ const loginRouter = async (req, res) => {
     };
 
     // Generate JWT token
-    const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" }); // Token expires in 1 hour
+    const token = jwt.sign(payload, process.env.JWT_SECRET, {
+      expiresIn: "1h",
+    }); // Token expires in 1 hour
 
     res.json({ token });
   } catch (err) {

@@ -1,6 +1,6 @@
 import express from "express";
 import bcrypt from "bcrypt";
-import pool from "../client/client.js";
+import pool from "../../client/client.js";
 
 const registerUser = async (req, res) => {
   const { first_name, last_name, email, password } = req.body;

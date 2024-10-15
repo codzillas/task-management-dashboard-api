@@ -1,5 +1,4 @@
-import express from "express";
-import pool from "../client/client.js";
+import pool from "../../client/client.js";
 
 const getTasks = async (req, res) => {
   try {

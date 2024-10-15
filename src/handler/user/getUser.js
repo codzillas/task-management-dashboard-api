@@ -1,4 +1,4 @@
-import pool from "../client/client.js";
+import pool from "../../client/client.js";
 
 const getUserDetails = async (req, res) => {
   let status = 500;
